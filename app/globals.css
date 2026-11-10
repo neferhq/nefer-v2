@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Lenis: required so smooth scrolling and native scroll-behavior don't fight. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@layer base {
+  :root {
+    /* Gradient stops are one step deeper in light mode so large type keeps contrast on chalk. */
+    --g1: #059669;
+    --g2: #2563eb;
+    --g3: #7c3aed;
+    --g4: #dc2626;
+  }
+  .dark {
+    --g1: #10b981;
+    --g2: #3b82f6;
+    --g3: #8b5cf6;
+    --g4: #ef4444;
+  }
+
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-chalk font-sans text-ink antialiased dark:bg-ink dark:text-slate-100;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgb(139 92 246 / 0.35);
+  }
+
+  :focus-visible {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+  }
+}
+
+@layer components {
+  /* Frosted surface used by the nav, panels and cards. */
+  .glass {
+    @apply border border-slate-900/10 bg-white/60 shadow-[0_1px_0_0_rgb(255_255_255/0.6)_inset,0_10px_40px_-12px_rgb(15_23_42/0.18)] backdrop-blur-xl;
+    @apply dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[0_1px_0_0_rgb(255_255_255/0.06)_inset,0_20px_50px_-20px_rgb(0_0_0/0.7)];
+  }
+
+  /* Four-colour gradient that slowly pans across the text. */
+  .gradient-text {
+    background-image: linear-gradient(
+      100deg,
+      var(--g1),
+      var(--g2),
+      var(--g3),
+      var(--g4),
+      var(--g1)
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    @apply animate-gradient-pan;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-text {
+    animation: none;
+  }
+}
