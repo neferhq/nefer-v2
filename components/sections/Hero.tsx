@@ -74,9 +74,7 @@ export function Hero() {
           variants={settle}
           className="mt-8 max-w-xl text-lg leading-relaxed text-slate-600 sm:text-xl dark:text-slate-400"
         >
-          I&rsquo;m a frontend engineer and UI/UX designer. I build fast, accessible websites and
-          web apps for startups and growing businesses, and I take them from first sketch to live
-          deploy through {site.brand}
+          Defying the ordinary. NEFER shapes ideas into digital artifacts-sharp, deliberate, and undeniably alive.{site.brand}
           {site.tld}.
         </motion.p>
 

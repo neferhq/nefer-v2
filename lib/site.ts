@@ -8,14 +8,14 @@ export const site = {
   brand: "Nefer",
   tld: ".id",
   businessUrl: "https://nefer.id",
-  email: "hello@nefer.id",
+  email: "neferhq@gmail.com",
   year: 2026,
   availability: {
     label: "Booking projects for December",
     hoverLabel: "Replies within 24 hours",
   },
   description:
-    "Frontend engineer and UI/UX designer building fast, accessible websites and web apps for startups and growing businesses.",
+    "NEFER creates thoughtful digital experiences for people, brands, and ideas worth remembering for startups and growing businesses.",
 } as const;
 
 /**
@@ -38,10 +38,10 @@ export const disciplines: { label: string; accent: Accent }[] = [
 ];
 
 export const socials: { label: string; href: string; accent: Accent }[] = [
-  { label: "GitHub", href: "https://github.com/", accent: "violet" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/", accent: "blue" },
-  { label: "X", href: "https://x.com/", accent: "crimson" },
-  { label: "Instagram", href: "https://www.instagram.com/", accent: "emerald" },
+  { label: "GitHub", href: "https://github.com/neferhq", accent: "violet" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/neferhq", accent: "blue" },
+  { label: "X", href: "https://x.com/neferhq", accent: "crimson" },
+  { label: "Instagram", href: "https://www.instagram.com/neferhq", accent: "emerald" },
 ];
 
 export interface ServicePackage {

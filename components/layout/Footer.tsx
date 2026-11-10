@@ -99,7 +99,7 @@ export function Footer() {
 
         <p className="mt-14 text-sm text-slate-500 dark:text-slate-500">
           &copy; {site.year} {site.brand}
-          {site.tld}. Designed and built by hand with Next.js.
+          {site.tld}. Designed and built with love.
         </p>
       </div>
     </footer>
